@@ -19,17 +19,18 @@
 # only valid integers will be passed into the function.
 
 def narcissistic_number(num)
-     numarray=num.to_s.split("")
-    numadd=0
-    for x in numarray
-        x=x.to_i
-         numadd+=x**(numarray.length)
+     numarray=num.to_s.split("")  #convert number into string and split by each, store in numarray
+    numadd=0                        #declare variable numadd as 0
+    for x in numarray               #for each object in numarray, or each number
+        x=x.to_i                    #turn each number back to integer
+         numadd+=x**(numarray.length)   #raise integer by exponent of array length and add it to value of numadd
     end
-    if numadd == num 
-        return true
-    else 
-        return false
-    end
+    # if numadd == num           #can this be done in a ternary? yes
+    #     return true
+    # else 
+    #     return false
+    # end
+    numadd == num ? (return true) : (return false) # note that this didn't work unless you had brackets around the return true/false
 end
 
 p narcissistic_number(153)
